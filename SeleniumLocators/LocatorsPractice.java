@@ -26,19 +26,24 @@ public class LocatorsDemo {
 		driver.manage().window().maximize();
 		driver.get("https://rahulshettyacademy.com/locatorspractice/");
 		staticWait();
+		//id locator is used to locate based on the id attribute of tag it is unique and if a tag has id attribute please use that
 		WebElement userName = driver.findElement(By.id("inputUsername"));
 		System.out.println(userName.isDisplayed());
 		userName.sendKeys("Prassanna");
 		staticWait();
+		//This is the relativelocator which was introduced in Selenium version 4
 		WebElement pwd = driver.findElement(RelativeLocator.with(By.tagName("input")).below(userName));
+		// isDisplayed method is used to check if element under test is displayed in UI or not. It returns boolean value
 		System.out.println(pwd.isDisplayed());
 		pwd.sendKeys("Pwd");
 		staticWait();
 		List<WebElement> links=driver.findElements(By.tagName("a"));
 		System.out.println(links.size());
+		// isDisplayed method is used to check if element under test is displayed in UI or not. It returns boolean value
 		boolean resumeAssitance = driver
 				.findElement(By.linkText("Free Access to InterviewQues/ResumeAssistance/Material")).isDisplayed();
 		System.out.println(resumeAssitance);
+		// isDisplayed method is used to check if element under test is displayed in UI or not. It returns boolean value
 		boolean qaSummitLink = driver.findElement(By.partialLinkText("Rahul Shetty @Pune")).isDisplayed();
 		System.out.println(qaSummitLink);
 //		try {
